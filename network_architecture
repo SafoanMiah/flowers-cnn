@@ -1,0 +1,290 @@
+// Neural Network Architecture
+digraph {
+	node [fillcolor=lightblue shape=box style=filled]
+	rankdir=TB size="8,8"
+	subgraph cluster_input {
+		label="Input Layer"
+		input [label="Input
+(3, 224, 224)" fillcolor=lightgreen shape=ellipse]
+	}
+	input -> conv_set_1_0_conv
+	subgraph cluster_conv_set_1_0 {
+		label=conv_set_1_0
+		conv_set_1_0_conv [label="Conv2D
+Filters: 64
+Kernel: (3, 3)
+Stride: (1, 1)
+Padding: (1, 1)"]
+	}
+	conv_set_1_0_conv -> conv_set_1_1_bn
+	subgraph cluster_conv_set_1_1 {
+		label=conv_set_1_1
+		conv_set_1_1_bn [label="BatchNorm2D
+Channels: 64"]
+	}
+	conv_set_1_1_bn -> conv_set_1_2_relu
+	subgraph cluster_conv_set_1_2 {
+		label=conv_set_1_2
+		conv_set_1_2_relu [label="ReLU Activation"]
+	}
+	conv_set_1_2_relu -> conv_set_1_3_conv
+	subgraph cluster_conv_set_1_3 {
+		label=conv_set_1_3
+		conv_set_1_3_conv [label="Conv2D
+Filters: 64
+Kernel: (3, 3)
+Stride: (1, 1)
+Padding: (1, 1)"]
+	}
+	conv_set_1_3_conv -> conv_set_1_4_bn
+	subgraph cluster_conv_set_1_4 {
+		label=conv_set_1_4
+		conv_set_1_4_bn [label="BatchNorm2D
+Channels: 64"]
+	}
+	conv_set_1_4_bn -> conv_set_1_5_relu
+	subgraph cluster_conv_set_1_5 {
+		label=conv_set_1_5
+		conv_set_1_5_relu [label="ReLU Activation"]
+	}
+	conv_set_1_5_relu -> conv_set_1_6_pool
+	subgraph cluster_conv_set_1_6 {
+		label=conv_set_1_6
+		conv_set_1_6_pool [label="MaxPool2D
+Kernel: 2
+Stride: 2"]
+	}
+	conv_set_1_6_pool -> conv_set_2_0_conv
+	subgraph cluster_conv_set_2_0 {
+		label=conv_set_2_0
+		conv_set_2_0_conv [label="Conv2D
+Filters: 128
+Kernel: (3, 3)
+Stride: (1, 1)
+Padding: (1, 1)"]
+	}
+	conv_set_2_0_conv -> conv_set_2_1_bn
+	subgraph cluster_conv_set_2_1 {
+		label=conv_set_2_1
+		conv_set_2_1_bn [label="BatchNorm2D
+Channels: 128"]
+	}
+	conv_set_2_1_bn -> conv_set_2_2_relu
+	subgraph cluster_conv_set_2_2 {
+		label=conv_set_2_2
+		conv_set_2_2_relu [label="ReLU Activation"]
+	}
+	conv_set_2_2_relu -> conv_set_2_3_conv
+	subgraph cluster_conv_set_2_3 {
+		label=conv_set_2_3
+		conv_set_2_3_conv [label="Conv2D
+Filters: 128
+Kernel: (3, 3)
+Stride: (1, 1)
+Padding: (1, 1)"]
+	}
+	conv_set_2_3_conv -> conv_set_2_4_bn
+	subgraph cluster_conv_set_2_4 {
+		label=conv_set_2_4
+		conv_set_2_4_bn [label="BatchNorm2D
+Channels: 128"]
+	}
+	conv_set_2_4_bn -> conv_set_2_5_relu
+	subgraph cluster_conv_set_2_5 {
+		label=conv_set_2_5
+		conv_set_2_5_relu [label="ReLU Activation"]
+	}
+	conv_set_2_5_relu -> conv_set_2_6_pool
+	subgraph cluster_conv_set_2_6 {
+		label=conv_set_2_6
+		conv_set_2_6_pool [label="MaxPool2D
+Kernel: 2
+Stride: 2"]
+	}
+	conv_set_2_6_pool -> conv_set_3_0_conv
+	subgraph cluster_conv_set_3_0 {
+		label=conv_set_3_0
+		conv_set_3_0_conv [label="Conv2D
+Filters: 256
+Kernel: (3, 3)
+Stride: (1, 1)
+Padding: (1, 1)"]
+	}
+	conv_set_3_0_conv -> conv_set_3_1_bn
+	subgraph cluster_conv_set_3_1 {
+		label=conv_set_3_1
+		conv_set_3_1_bn [label="BatchNorm2D
+Channels: 256"]
+	}
+	conv_set_3_1_bn -> conv_set_3_2_relu
+	subgraph cluster_conv_set_3_2 {
+		label=conv_set_3_2
+		conv_set_3_2_relu [label="ReLU Activation"]
+	}
+	conv_set_3_2_relu -> conv_set_3_3_conv
+	subgraph cluster_conv_set_3_3 {
+		label=conv_set_3_3
+		conv_set_3_3_conv [label="Conv2D
+Filters: 256
+Kernel: (3, 3)
+Stride: (1, 1)
+Padding: (1, 1)"]
+	}
+	conv_set_3_3_conv -> conv_set_3_4_bn
+	subgraph cluster_conv_set_3_4 {
+		label=conv_set_3_4
+		conv_set_3_4_bn [label="BatchNorm2D
+Channels: 256"]
+	}
+	conv_set_3_4_bn -> conv_set_3_5_relu
+	subgraph cluster_conv_set_3_5 {
+		label=conv_set_3_5
+		conv_set_3_5_relu [label="ReLU Activation"]
+	}
+	conv_set_3_5_relu -> conv_set_3_6_pool
+	subgraph cluster_conv_set_3_6 {
+		label=conv_set_3_6
+		conv_set_3_6_pool [label="MaxPool2D
+Kernel: 2
+Stride: 2"]
+	}
+	conv_set_3_6_pool -> conv_set_4_0_conv
+	subgraph cluster_conv_set_4_0 {
+		label=conv_set_4_0
+		conv_set_4_0_conv [label="Conv2D
+Filters: 512
+Kernel: (3, 3)
+Stride: (1, 1)
+Padding: (1, 1)"]
+	}
+	conv_set_4_0_conv -> conv_set_4_1_bn
+	subgraph cluster_conv_set_4_1 {
+		label=conv_set_4_1
+		conv_set_4_1_bn [label="BatchNorm2D
+Channels: 512"]
+	}
+	conv_set_4_1_bn -> conv_set_4_2_relu
+	subgraph cluster_conv_set_4_2 {
+		label=conv_set_4_2
+		conv_set_4_2_relu [label="ReLU Activation"]
+	}
+	conv_set_4_2_relu -> conv_set_4_3_conv
+	subgraph cluster_conv_set_4_3 {
+		label=conv_set_4_3
+		conv_set_4_3_conv [label="Conv2D
+Filters: 512
+Kernel: (3, 3)
+Stride: (1, 1)
+Padding: (1, 1)"]
+	}
+	conv_set_4_3_conv -> conv_set_4_4_bn
+	subgraph cluster_conv_set_4_4 {
+		label=conv_set_4_4
+		conv_set_4_4_bn [label="BatchNorm2D
+Channels: 512"]
+	}
+	conv_set_4_4_bn -> conv_set_4_5_relu
+	subgraph cluster_conv_set_4_5 {
+		label=conv_set_4_5
+		conv_set_4_5_relu [label="ReLU Activation"]
+	}
+	conv_set_4_5_relu -> conv_set_4_6_pool
+	subgraph cluster_conv_set_4_6 {
+		label=conv_set_4_6
+		conv_set_4_6_pool [label="MaxPool2D
+Kernel: 2
+Stride: 2"]
+	}
+	conv_set_4_6_pool -> conv_set_5_0_conv
+	subgraph cluster_conv_set_5_0 {
+		label=conv_set_5_0
+		conv_set_5_0_conv [label="Conv2D
+Filters: 512
+Kernel: (3, 3)
+Stride: (1, 1)
+Padding: (1, 1)"]
+	}
+	conv_set_5_0_conv -> conv_set_5_1_bn
+	subgraph cluster_conv_set_5_1 {
+		label=conv_set_5_1
+		conv_set_5_1_bn [label="BatchNorm2D
+Channels: 512"]
+	}
+	conv_set_5_1_bn -> conv_set_5_2_relu
+	subgraph cluster_conv_set_5_2 {
+		label=conv_set_5_2
+		conv_set_5_2_relu [label="ReLU Activation"]
+	}
+	conv_set_5_2_relu -> conv_set_5_3_conv
+	subgraph cluster_conv_set_5_3 {
+		label=conv_set_5_3
+		conv_set_5_3_conv [label="Conv2D
+Filters: 512
+Kernel: (3, 3)
+Stride: (1, 1)
+Padding: (1, 1)"]
+	}
+	conv_set_5_3_conv -> conv_set_5_4_bn
+	subgraph cluster_conv_set_5_4 {
+		label=conv_set_5_4
+		conv_set_5_4_bn [label="BatchNorm2D
+Channels: 512"]
+	}
+	conv_set_5_4_bn -> conv_set_5_5_relu
+	subgraph cluster_conv_set_5_5 {
+		label=conv_set_5_5
+		conv_set_5_5_relu [label="ReLU Activation"]
+	}
+	conv_set_5_5_relu -> conv_set_5_6_pool
+	subgraph cluster_conv_set_5_6 {
+		label=conv_set_5_6
+		conv_set_5_6_pool [label="MaxPool2D
+Kernel: 2
+Stride: 2"]
+	}
+	conv_set_5_6_pool -> flatten_generic
+	subgraph cluster_flatten {
+		label=flatten
+		flatten_generic [label="Flatten(start_dim=1, end_dim=-1)"]
+	}
+	flatten_generic -> dense_set_1_0_dense
+	subgraph cluster_dense_set_1_0 {
+		label=dense_set_1_0
+		dense_set_1_0_dense [label="Dense
+Neurons: 4096" fillcolor=lightyellow]
+	}
+	dense_set_1_0_dense -> dense_set_1_1_relu
+	subgraph cluster_dense_set_1_1 {
+		label=dense_set_1_1
+		dense_set_1_1_relu [label="ReLU Activation"]
+	}
+	dense_set_1_1_relu -> dense_set_1_2_dropout
+	subgraph cluster_dense_set_1_2 {
+		label=dense_set_1_2
+		dense_set_1_2_dropout [label="Dropout
+Rate: 0.5" fillcolor=lightpink]
+	}
+	dense_set_1_2_dropout -> dense_set_2_0_dense
+	subgraph cluster_dense_set_2_0 {
+		label=dense_set_2_0
+		dense_set_2_0_dense [label="Dense
+Neurons: 1024" fillcolor=lightyellow]
+	}
+	dense_set_2_0_dense -> dense_set_2_1_relu
+	subgraph cluster_dense_set_2_1 {
+		label=dense_set_2_1
+		dense_set_2_1_relu [label="ReLU Activation"]
+	}
+	dense_set_2_1_relu -> dense_set_2_2_dropout
+	subgraph cluster_dense_set_2_2 {
+		label=dense_set_2_2
+		dense_set_2_2_dropout [label="Dropout
+Rate: 0.5" fillcolor=lightpink]
+	}
+	dense_set_2_2_dropout -> dense_set_3_dense
+	subgraph cluster_dense_set_3 {
+		label=dense_set_3
+		dense_set_3_dense [label="Dense
+Neurons: 5" fillcolor=lightyellow]
+	}
+}

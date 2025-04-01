@@ -1,0 +1,952 @@
+digraph {
+	graph [rankdir=TB size="74.85,74.85"]
+	node [align=left fontname=monospace fontsize=10 height=0.2 ranksep=0.1 shape=box style=filled]
+	1705681428448 [label="
+ ()" fillcolor=darkolivegreen1]
+	1706065423296 [label="MeanBackward0
+----------------------
+self_sym_numel:      5
+self_sym_sizes: (1, 5)"]
+	1706065415088 -> 1706065423296
+	1706065415088 -> 1705681825824 [dir=none]
+	1705681825824 [label="mat1
+ (1, 1024)" fillcolor=orange]
+	1706065415088 -> 1705681815904 [dir=none]
+	1705681815904 [label="mat2
+ (1024, 5)" fillcolor=orange]
+	1706065415088 [label="AddmmBackward0
+--------------------------------
+alpha           :              1
+beta            :              1
+mat1            : [saved tensor]
+mat1_sym_sizes  :      (1, 1024)
+mat1_sym_strides:      (1024, 1)
+mat2            : [saved tensor]
+mat2_sym_sizes  :      (1024, 5)
+mat2_sym_strides:      (1, 1024)"]
+	1706114981968 -> 1706065415088
+	1705681815344 [label="dense_set_3.bias
+ (5)" fillcolor=lightblue]
+	1705681815344 -> 1706114981968
+	1706114981968 [label=AccumulateGrad]
+	1706114980624 -> 1706065415088
+	1706114980624 -> 1705681820304 [dir=none]
+	1705681820304 [label="other
+ (1, 1024)" fillcolor=orange]
+	1706114980624 [label="MulBackward0
+---------------------
+other: [saved tensor]
+self :           None"]
+	1706114984416 -> 1706114980624
+	1706114984416 -> 1705681820384 [dir=none]
+	1705681820384 [label="result
+ (1, 1024)" fillcolor=orange]
+	1706114984416 [label="ReluBackward0
+----------------------
+result: [saved tensor]"]
+	1706066548800 -> 1706114984416
+	1706066548800 -> 1705681825744 [dir=none]
+	1705681825744 [label="mat1
+ (1, 4096)" fillcolor=orange]
+	1706066548800 -> 1705681824624 [dir=none]
+	1705681824624 [label="mat2
+ (4096, 1024)" fillcolor=orange]
+	1706066548800 [label="AddmmBackward0
+--------------------------------
+alpha           :              1
+beta            :              1
+mat1            : [saved tensor]
+mat1_sym_sizes  :      (1, 4096)
+mat1_sym_strides:      (4096, 1)
+mat2            : [saved tensor]
+mat2_sym_sizes  :   (4096, 1024)
+mat2_sym_strides:      (1, 4096)"]
+	1706114976112 -> 1706066548800
+	1705681813664 [label="dense_set_2.0.bias
+ (1024)" fillcolor=lightblue]
+	1705681813664 -> 1706114976112
+	1706114976112 [label=AccumulateGrad]
+	1706114980576 -> 1706066548800
+	1706114980576 -> 1705681818224 [dir=none]
+	1705681818224 [label="other
+ (1, 4096)" fillcolor=orange]
+	1706114980576 [label="MulBackward0
+---------------------
+other: [saved tensor]
+self :           None"]
+	1706114975344 -> 1706114980576
+	1706114975344 -> 1705681827424 [dir=none]
+	1705681827424 [label="result
+ (1, 4096)" fillcolor=orange]
+	1706114975344 [label="ReluBackward0
+----------------------
+result: [saved tensor]"]
+	1706114976688 -> 1706114975344
+	1706114976688 -> 1705680336160 [dir=none]
+	1705680336160 [label="mat1
+ (1, 25088)" fillcolor=orange]
+	1706114976688 -> 1705681827584 [dir=none]
+	1705681827584 [label="mat2
+ (25088, 4096)" fillcolor=orange]
+	1706114976688 [label="AddmmBackward0
+--------------------------------
+alpha           :              1
+beta            :              1
+mat1            : [saved tensor]
+mat1_sym_sizes  :     (1, 25088)
+mat1_sym_strides:     (25088, 1)
+mat2            : [saved tensor]
+mat2_sym_sizes  :  (25088, 4096)
+mat2_sym_strides:     (1, 25088)"]
+	1706114976352 -> 1706114976688
+	1705681815584 [label="dense_set_1.0.bias
+ (4096)" fillcolor=lightblue]
+	1705681815584 -> 1706114976352
+	1706114976352 [label=AccumulateGrad]
+	1706114980288 -> 1706114976688
+	1706114980288 [label="ViewBackward0
+------------------------------
+self_sym_sizes: (1, 512, 7, 7)"]
+	1706114980912 -> 1706114980288
+	1706114980912 -> 1705681821984 [dir=none]
+	1705681821984 [label="result1
+ (1, 512, 7, 7)" fillcolor=orange]
+	1706114980912 -> 1705681816304 [dir=none]
+	1705681816304 [label="self
+ (1, 512, 14, 14)" fillcolor=orange]
+	1706114980912 [label="MaxPool2DWithIndicesBackward0
+-----------------------------
+ceil_mode  :          False
+dilation   :         (1, 1)
+kernel_size:         (2, 2)
+padding    :         (0, 0)
+result1    : [saved tensor]
+self       : [saved tensor]
+stride     :         (2, 2)"]
+	1706114979712 -> 1706114980912
+	1706114979712 -> 1705681821904 [dir=none]
+	1705681821904 [label="result
+ (1, 512, 14, 14)" fillcolor=orange]
+	1706114979712 [label="ReluBackward0
+----------------------
+result: [saved tensor]"]
+	1706114985040 -> 1706114979712
+	1706114985040 -> 1705681814304 [dir=none]
+	1705681814304 [label="input
+ (1, 512, 14, 14)" fillcolor=orange]
+	1706114985040 -> 1705681828704 [dir=none]
+	1705681828704 [label="result1
+ (512)" fillcolor=orange]
+	1706114985040 -> 1705681819664 [dir=none]
+	1705681819664 [label="result2
+ (512)" fillcolor=orange]
+	1706114985040 -> 1705681814144 [dir=none]
+	1705681814144 [label="running_mean
+ (512)" fillcolor=orange]
+	1706114985040 -> 1705681828944 [dir=none]
+	1705681828944 [label="running_var
+ (512)" fillcolor=orange]
+	1706114985040 -> 1705681816544 [dir=none]
+	1705681816544 [label="weight
+ (512)" fillcolor=orange]
+	1706114985040 [label="NativeBatchNormBackward0
+----------------------------
+eps         :          1e-05
+input       : [saved tensor]
+result1     : [saved tensor]
+result2     : [saved tensor]
+running_mean: [saved tensor]
+running_var : [saved tensor]
+training    :           True
+weight      : [saved tensor]"]
+	1706114976256 -> 1706114985040
+	1706114976256 -> 1705681815984 [dir=none]
+	1705681815984 [label="input
+ (1, 512, 14, 14)" fillcolor=orange]
+	1706114976256 -> 1705681814224 [dir=none]
+	1705681814224 [label="weight
+ (512, 512, 3, 3)" fillcolor=orange]
+	1706114976256 [label="ConvolutionBackward0
+----------------------------------
+bias_sym_sizes_opt:         (512,)
+dilation          :         (1, 1)
+groups            :              1
+input             : [saved tensor]
+output_padding    :         (0, 0)
+padding           :         (1, 1)
+stride            :         (1, 1)
+transposed        :          False
+weight            : [saved tensor]"]
+	1706114987680 -> 1706114976256
+	1706114987680 -> 1705681817904 [dir=none]
+	1705681817904 [label="result
+ (1, 512, 14, 14)" fillcolor=orange]
+	1706114987680 [label="ReluBackward0
+----------------------
+result: [saved tensor]"]
+	1706114981200 -> 1706114987680
+	1706114981200 -> 1705681826544 [dir=none]
+	1705681826544 [label="input
+ (1, 512, 14, 14)" fillcolor=orange]
+	1706114981200 -> 1705681823984 [dir=none]
+	1705681823984 [label="result1
+ (512)" fillcolor=orange]
+	1706114981200 -> 1705681828384 [dir=none]
+	1705681828384 [label="result2
+ (512)" fillcolor=orange]
+	1706114981200 -> 1705681829504 [dir=none]
+	1705681829504 [label="running_mean
+ (512)" fillcolor=orange]
+	1706114981200 -> 1705681818704 [dir=none]
+	1705681818704 [label="running_var
+ (512)" fillcolor=orange]
+	1706114981200 -> 1705681819344 [dir=none]
+	1705681819344 [label="weight
+ (512)" fillcolor=orange]
+	1706114981200 [label="NativeBatchNormBackward0
+----------------------------
+eps         :          1e-05
+input       : [saved tensor]
+result1     : [saved tensor]
+result2     : [saved tensor]
+running_mean: [saved tensor]
+running_var : [saved tensor]
+training    :           True
+weight      : [saved tensor]"]
+	1706114988352 -> 1706114981200
+	1706114988352 -> 1705681819824 [dir=none]
+	1705681819824 [label="input
+ (1, 512, 14, 14)" fillcolor=orange]
+	1706114988352 -> 1705681825104 [dir=none]
+	1705681825104 [label="weight
+ (512, 512, 3, 3)" fillcolor=orange]
+	1706114988352 [label="ConvolutionBackward0
+----------------------------------
+bias_sym_sizes_opt:         (512,)
+dilation          :         (1, 1)
+groups            :              1
+input             : [saved tensor]
+output_padding    :         (0, 0)
+padding           :         (1, 1)
+stride            :         (1, 1)
+transposed        :          False
+weight            : [saved tensor]"]
+	1706119173680 -> 1706114988352
+	1706119173680 -> 1705681824064 [dir=none]
+	1705681824064 [label="result1
+ (1, 512, 14, 14)" fillcolor=orange]
+	1706119173680 -> 1705681826464 [dir=none]
+	1705681826464 [label="self
+ (1, 512, 28, 28)" fillcolor=orange]
+	1706119173680 [label="MaxPool2DWithIndicesBackward0
+-----------------------------
+ceil_mode  :          False
+dilation   :         (1, 1)
+kernel_size:         (2, 2)
+padding    :         (0, 0)
+result1    : [saved tensor]
+self       : [saved tensor]
+stride     :         (2, 2)"]
+	1706119170560 -> 1706119173680
+	1706119170560 -> 1705681821264 [dir=none]
+	1705681821264 [label="result
+ (1, 512, 28, 28)" fillcolor=orange]
+	1706119170560 [label="ReluBackward0
+----------------------
+result: [saved tensor]"]
+	1706119183328 -> 1706119170560
+	1706119183328 -> 1705681827184 [dir=none]
+	1705681827184 [label="input
+ (1, 512, 28, 28)" fillcolor=orange]
+	1706119183328 -> 1705681818944 [dir=none]
+	1705681818944 [label="result1
+ (512)" fillcolor=orange]
+	1706119183328 -> 1705681826144 [dir=none]
+	1705681826144 [label="result2
+ (512)" fillcolor=orange]
+	1706119183328 -> 1705681823184 [dir=none]
+	1705681823184 [label="running_mean
+ (512)" fillcolor=orange]
+	1706119183328 -> 1705681816704 [dir=none]
+	1705681816704 [label="running_var
+ (512)" fillcolor=orange]
+	1706119183328 -> 1705681817664 [dir=none]
+	1705681817664 [label="weight
+ (512)" fillcolor=orange]
+	1706119183328 [label="NativeBatchNormBackward0
+----------------------------
+eps         :          1e-05
+input       : [saved tensor]
+result1     : [saved tensor]
+result2     : [saved tensor]
+running_mean: [saved tensor]
+running_var : [saved tensor]
+training    :           True
+weight      : [saved tensor]"]
+	1706119178096 -> 1706119183328
+	1706119178096 -> 1705681826784 [dir=none]
+	1705681826784 [label="input
+ (1, 512, 28, 28)" fillcolor=orange]
+	1706119178096 -> 1705681817184 [dir=none]
+	1705681817184 [label="weight
+ (512, 512, 3, 3)" fillcolor=orange]
+	1706119178096 [label="ConvolutionBackward0
+----------------------------------
+bias_sym_sizes_opt:         (512,)
+dilation          :         (1, 1)
+groups            :              1
+input             : [saved tensor]
+output_padding    :         (0, 0)
+padding           :         (1, 1)
+stride            :         (1, 1)
+transposed        :          False
+weight            : [saved tensor]"]
+	1706119183280 -> 1706119178096
+	1706119183280 -> 1705681818624 [dir=none]
+	1705681818624 [label="result
+ (1, 512, 28, 28)" fillcolor=orange]
+	1706119183280 [label="ReluBackward0
+----------------------
+result: [saved tensor]"]
+	1706119178000 -> 1706119183280
+	1706119178000 -> 1705681827104 [dir=none]
+	1705681827104 [label="input
+ (1, 512, 28, 28)" fillcolor=orange]
+	1706119178000 -> 1705681814784 [dir=none]
+	1705681814784 [label="result1
+ (512)" fillcolor=orange]
+	1706119178000 -> 1705681816224 [dir=none]
+	1705681816224 [label="result2
+ (512)" fillcolor=orange]
+	1706119178000 -> 1705681825344 [dir=none]
+	1705681825344 [label="running_mean
+ (512)" fillcolor=orange]
+	1706119178000 -> 1705681818544 [dir=none]
+	1705681818544 [label="running_var
+ (512)" fillcolor=orange]
+	1706119178000 -> 1705681829744 [dir=none]
+	1705681829744 [label="weight
+ (512)" fillcolor=orange]
+	1706119178000 [label="NativeBatchNormBackward0
+----------------------------
+eps         :          1e-05
+input       : [saved tensor]
+result1     : [saved tensor]
+result2     : [saved tensor]
+running_mean: [saved tensor]
+running_var : [saved tensor]
+training    :           True
+weight      : [saved tensor]"]
+	1706119172240 -> 1706119178000
+	1706119172240 -> 1705681814624 [dir=none]
+	1705681814624 [label="input
+ (1, 256, 28, 28)" fillcolor=orange]
+	1706119172240 -> 1705681825424 [dir=none]
+	1705681825424 [label="weight
+ (512, 256, 3, 3)" fillcolor=orange]
+	1706119172240 [label="ConvolutionBackward0
+----------------------------------
+bias_sym_sizes_opt:         (512,)
+dilation          :         (1, 1)
+groups            :              1
+input             : [saved tensor]
+output_padding    :         (0, 0)
+padding           :         (1, 1)
+stride            :         (1, 1)
+transposed        :          False
+weight            : [saved tensor]"]
+	1706119175168 -> 1706119172240
+	1706119175168 -> 1705681820544 [dir=none]
+	1705681820544 [label="result1
+ (1, 256, 28, 28)" fillcolor=orange]
+	1706119175168 -> 1705681820464 [dir=none]
+	1705681820464 [label="self
+ (1, 256, 56, 56)" fillcolor=orange]
+	1706119175168 [label="MaxPool2DWithIndicesBackward0
+-----------------------------
+ceil_mode  :          False
+dilation   :         (1, 1)
+kernel_size:         (2, 2)
+padding    :         (0, 0)
+result1    : [saved tensor]
+self       : [saved tensor]
+stride     :         (2, 2)"]
+	1706119183952 -> 1706119175168
+	1706119183952 -> 1705681814384 [dir=none]
+	1705681814384 [label="result
+ (1, 256, 56, 56)" fillcolor=orange]
+	1706119183952 [label="ReluBackward0
+----------------------
+result: [saved tensor]"]
+	1706119181744 -> 1706119183952
+	1706119181744 -> 1706091554816 [dir=none]
+	1706091554816 [label="input
+ (1, 256, 56, 56)" fillcolor=orange]
+	1706119181744 -> 1705681819904 [dir=none]
+	1705681819904 [label="result1
+ (256)" fillcolor=orange]
+	1706119181744 -> 1705681816784 [dir=none]
+	1705681816784 [label="result2
+ (256)" fillcolor=orange]
+	1706119181744 -> 1705681557280 [dir=none]
+	1705681557280 [label="running_mean
+ (256)" fillcolor=orange]
+	1706119181744 -> 1705681825504 [dir=none]
+	1705681825504 [label="running_var
+ (256)" fillcolor=orange]
+	1706119181744 -> 1705681824464 [dir=none]
+	1705681824464 [label="weight
+ (256)" fillcolor=orange]
+	1706119181744 [label="NativeBatchNormBackward0
+----------------------------
+eps         :          1e-05
+input       : [saved tensor]
+result1     : [saved tensor]
+result2     : [saved tensor]
+running_mean: [saved tensor]
+running_var : [saved tensor]
+training    :           True
+weight      : [saved tensor]"]
+	1706119183568 -> 1706119181744
+	1706119183568 -> 1705238155728 [dir=none]
+	1705238155728 [label="input
+ (1, 256, 56, 56)" fillcolor=orange]
+	1706119183568 -> 1705681556720 [dir=none]
+	1705681556720 [label="weight
+ (256, 256, 3, 3)" fillcolor=orange]
+	1706119183568 [label="ConvolutionBackward0
+----------------------------------
+bias_sym_sizes_opt:         (256,)
+dilation          :         (1, 1)
+groups            :              1
+input             : [saved tensor]
+output_padding    :         (0, 0)
+padding           :         (1, 1)
+stride            :         (1, 1)
+transposed        :          False
+weight            : [saved tensor]"]
+	1706119172336 -> 1706119183568
+	1706119172336 -> 1705681827264 [dir=none]
+	1705681827264 [label="result
+ (1, 256, 56, 56)" fillcolor=orange]
+	1706119172336 [label="ReluBackward0
+----------------------
+result: [saved tensor]"]
+	1706119178336 -> 1706119172336
+	1706119178336 -> 1705688593536 [dir=none]
+	1705688593536 [label="input
+ (1, 256, 56, 56)" fillcolor=orange]
+	1706119178336 -> 1705681825024 [dir=none]
+	1705681825024 [label="result1
+ (256)" fillcolor=orange]
+	1706119178336 -> 1705681828864 [dir=none]
+	1705681828864 [label="result2
+ (256)" fillcolor=orange]
+	1706119178336 -> 1705681556000 [dir=none]
+	1705681556000 [label="running_mean
+ (256)" fillcolor=orange]
+	1706119178336 -> 1705681562480 [dir=none]
+	1705681562480 [label="running_var
+ (256)" fillcolor=orange]
+	1706119178336 -> 1705681561760 [dir=none]
+	1705681561760 [label="weight
+ (256)" fillcolor=orange]
+	1706119178336 [label="NativeBatchNormBackward0
+----------------------------
+eps         :          1e-05
+input       : [saved tensor]
+result1     : [saved tensor]
+result2     : [saved tensor]
+running_mean: [saved tensor]
+running_var : [saved tensor]
+training    :           True
+weight      : [saved tensor]"]
+	1706119181456 -> 1706119178336
+	1706119181456 -> 1705681426368 [dir=none]
+	1705681426368 [label="input
+ (1, 128, 56, 56)" fillcolor=orange]
+	1706119181456 -> 1705681563760 [dir=none]
+	1705681563760 [label="weight
+ (256, 128, 3, 3)" fillcolor=orange]
+	1706119181456 [label="ConvolutionBackward0
+----------------------------------
+bias_sym_sizes_opt:         (256,)
+dilation          :         (1, 1)
+groups            :              1
+input             : [saved tensor]
+output_padding    :         (0, 0)
+padding           :         (1, 1)
+stride            :         (1, 1)
+transposed        :          False
+weight            : [saved tensor]"]
+	1706119178432 -> 1706119181456
+	1706119178432 -> 1705681823744 [dir=none]
+	1705681823744 [label="result1
+ (1, 128, 56, 56)" fillcolor=orange]
+	1706119178432 -> 1706125050416 [dir=none]
+	1706125050416 [label="self
+ (1, 128, 112, 112)" fillcolor=orange]
+	1706119178432 [label="MaxPool2DWithIndicesBackward0
+-----------------------------
+ceil_mode  :          False
+dilation   :         (1, 1)
+kernel_size:         (2, 2)
+padding    :         (0, 0)
+result1    : [saved tensor]
+self       : [saved tensor]
+stride     :         (2, 2)"]
+	1706119176752 -> 1706119178432
+	1706119176752 -> 1705681813984 [dir=none]
+	1705681813984 [label="result
+ (1, 128, 112, 112)" fillcolor=orange]
+	1706119176752 [label="ReluBackward0
+----------------------
+result: [saved tensor]"]
+	1706119175552 -> 1706119176752
+	1706119175552 -> 1705681426288 [dir=none]
+	1705681426288 [label="input
+ (1, 128, 112, 112)" fillcolor=orange]
+	1706119175552 -> 1705681814864 [dir=none]
+	1705681814864 [label="result1
+ (128)" fillcolor=orange]
+	1706119175552 -> 1705681823904 [dir=none]
+	1705681823904 [label="result2
+ (128)" fillcolor=orange]
+	1706119175552 -> 1705681561440 [dir=none]
+	1705681561440 [label="running_mean
+ (128)" fillcolor=orange]
+	1706119175552 -> 1705681559120 [dir=none]
+	1705681559120 [label="running_var
+ (128)" fillcolor=orange]
+	1706119175552 -> 1705681564160 [dir=none]
+	1705681564160 [label="weight
+ (128)" fillcolor=orange]
+	1706119175552 [label="NativeBatchNormBackward0
+----------------------------
+eps         :          1e-05
+input       : [saved tensor]
+result1     : [saved tensor]
+result2     : [saved tensor]
+running_mean: [saved tensor]
+running_var : [saved tensor]
+training    :           True
+weight      : [saved tensor]"]
+	1706119184336 -> 1706119175552
+	1706119184336 -> 1705681435488 [dir=none]
+	1705681435488 [label="input
+ (1, 128, 112, 112)" fillcolor=orange]
+	1706119184336 -> 1705681567360 [dir=none]
+	1705681567360 [label="weight
+ (128, 128, 3, 3)" fillcolor=orange]
+	1706119184336 [label="ConvolutionBackward0
+----------------------------------
+bias_sym_sizes_opt:         (128,)
+dilation          :         (1, 1)
+groups            :              1
+input             : [saved tensor]
+output_padding    :         (0, 0)
+padding           :         (1, 1)
+stride            :         (1, 1)
+transposed        :          False
+weight            : [saved tensor]"]
+	1706119174496 -> 1706119184336
+	1706119174496 -> 1705681828624 [dir=none]
+	1705681828624 [label="result
+ (1, 128, 112, 112)" fillcolor=orange]
+	1706119174496 [label="ReluBackward0
+----------------------
+result: [saved tensor]"]
+	1706114068592 -> 1706119174496
+	1706114068592 -> 1705681423488 [dir=none]
+	1705681423488 [label="input
+ (1, 128, 112, 112)" fillcolor=orange]
+	1706114068592 -> 1705681817744 [dir=none]
+	1705681817744 [label="result1
+ (128)" fillcolor=orange]
+	1706114068592 -> 1705681819504 [dir=none]
+	1705681819504 [label="result2
+ (128)" fillcolor=orange]
+	1706114068592 -> 1705681556400 [dir=none]
+	1705681556400 [label="running_mean
+ (128)" fillcolor=orange]
+	1706114068592 -> 1705681560080 [dir=none]
+	1705681560080 [label="running_var
+ (128)" fillcolor=orange]
+	1706114068592 -> 1705681566160 [dir=none]
+	1705681566160 [label="weight
+ (128)" fillcolor=orange]
+	1706114068592 [label="NativeBatchNormBackward0
+----------------------------
+eps         :          1e-05
+input       : [saved tensor]
+result1     : [saved tensor]
+result2     : [saved tensor]
+running_mean: [saved tensor]
+running_var : [saved tensor]
+training    :           True
+weight      : [saved tensor]"]
+	1706114064656 -> 1706114068592
+	1706114064656 -> 1705681422928 [dir=none]
+	1705681422928 [label="input
+ (1, 64, 112, 112)" fillcolor=orange]
+	1706114064656 -> 1705681565200 [dir=none]
+	1705681565200 [label="weight
+ (128, 64, 3, 3)" fillcolor=orange]
+	1706114064656 [label="ConvolutionBackward0
+----------------------------------
+bias_sym_sizes_opt:         (128,)
+dilation          :         (1, 1)
+groups            :              1
+input             : [saved tensor]
+output_padding    :         (0, 0)
+padding           :         (1, 1)
+stride            :         (1, 1)
+transposed        :          False
+weight            : [saved tensor]"]
+	1706114070320 -> 1706114064656
+	1706114070320 -> 1705681816944 [dir=none]
+	1705681816944 [label="result1
+ (1, 64, 112, 112)" fillcolor=orange]
+	1706114070320 -> 1705681420768 [dir=none]
+	1705681420768 [label="self
+ (1, 64, 224, 224)" fillcolor=orange]
+	1706114070320 [label="MaxPool2DWithIndicesBackward0
+-----------------------------
+ceil_mode  :          False
+dilation   :         (1, 1)
+kernel_size:         (2, 2)
+padding    :         (0, 0)
+result1    : [saved tensor]
+self       : [saved tensor]
+stride     :         (2, 2)"]
+	1706114069600 -> 1706114070320
+	1706114069600 -> 1705681822224 [dir=none]
+	1705681822224 [label="result
+ (1, 64, 224, 224)" fillcolor=orange]
+	1706114069600 [label="ReluBackward0
+----------------------
+result: [saved tensor]"]
+	1706114071712 -> 1706114069600
+	1706114071712 -> 1705681430528 [dir=none]
+	1705681430528 [label="input
+ (1, 64, 224, 224)" fillcolor=orange]
+	1706114071712 -> 1705681829104 [dir=none]
+	1705681829104 [label="result1
+ (64)" fillcolor=orange]
+	1706114071712 -> 1705681816144 [dir=none]
+	1705681816144 [label="result2
+ (64)" fillcolor=orange]
+	1706114071712 -> 1705681565440 [dir=none]
+	1705681565440 [label="running_mean
+ (64)" fillcolor=orange]
+	1706114071712 -> 1705681555040 [dir=none]
+	1705681555040 [label="running_var
+ (64)" fillcolor=orange]
+	1706114071712 -> 1705681561280 [dir=none]
+	1705681561280 [label="weight
+ (64)" fillcolor=orange]
+	1706114071712 [label="NativeBatchNormBackward0
+----------------------------
+eps         :          1e-05
+input       : [saved tensor]
+result1     : [saved tensor]
+result2     : [saved tensor]
+running_mean: [saved tensor]
+running_var : [saved tensor]
+training    :           True
+weight      : [saved tensor]"]
+	1706114070704 -> 1706114071712
+	1706114070704 -> 1705681430448 [dir=none]
+	1705681430448 [label="input
+ (1, 64, 224, 224)" fillcolor=orange]
+	1706114070704 -> 1705681564000 [dir=none]
+	1705681564000 [label="weight
+ (64, 64, 3, 3)" fillcolor=orange]
+	1706114070704 [label="ConvolutionBackward0
+----------------------------------
+bias_sym_sizes_opt:          (64,)
+dilation          :         (1, 1)
+groups            :              1
+input             : [saved tensor]
+output_padding    :         (0, 0)
+padding           :         (1, 1)
+stride            :         (1, 1)
+transposed        :          False
+weight            : [saved tensor]"]
+	1706066672800 -> 1706114070704
+	1706066672800 -> 1705681829264 [dir=none]
+	1705681829264 [label="result
+ (1, 64, 224, 224)" fillcolor=orange]
+	1706066672800 [label="ReluBackward0
+----------------------
+result: [saved tensor]"]
+	1706066670880 -> 1706066672800
+	1706066670880 -> 1705681424128 [dir=none]
+	1705681424128 [label="input
+ (1, 64, 224, 224)" fillcolor=orange]
+	1706066670880 -> 1705681824784 [dir=none]
+	1705681824784 [label="result1
+ (64)" fillcolor=orange]
+	1706066670880 -> 1705681817424 [dir=none]
+	1705681817424 [label="result2
+ (64)" fillcolor=orange]
+	1706066670880 -> 1706144866592 [dir=none]
+	1706144866592 [label="running_mean
+ (64)" fillcolor=orange]
+	1706066670880 -> 1705681564640 [dir=none]
+	1705681564640 [label="running_var
+ (64)" fillcolor=orange]
+	1706066670880 -> 1705681557120 [dir=none]
+	1705681557120 [label="weight
+ (64)" fillcolor=orange]
+	1706066670880 [label="NativeBatchNormBackward0
+----------------------------
+eps         :          1e-05
+input       : [saved tensor]
+result1     : [saved tensor]
+result2     : [saved tensor]
+running_mean: [saved tensor]
+running_var : [saved tensor]
+training    :           True
+weight      : [saved tensor]"]
+	1706066672416 -> 1706066670880
+	1706066672416 -> 1706117324528 [dir=none]
+	1706117324528 [label="input
+ (1, 3, 224, 224)" fillcolor=orange]
+	1706066672416 -> 1705681559600 [dir=none]
+	1705681559600 [label="weight
+ (64, 3, 3, 3)" fillcolor=orange]
+	1706066672416 [label="ConvolutionBackward0
+----------------------------------
+bias_sym_sizes_opt:          (64,)
+dilation          :         (1, 1)
+groups            :              1
+input             : [saved tensor]
+output_padding    :         (0, 0)
+padding           :         (1, 1)
+stride            :         (1, 1)
+transposed        :          False
+weight            : [saved tensor]"]
+	1706066671264 -> 1706066672416
+	1705681559600 [label="conv_set_1.0.weight
+ (64, 3, 3, 3)" fillcolor=lightblue]
+	1705681559600 -> 1706066671264
+	1706066671264 [label=AccumulateGrad]
+	1706066671168 -> 1706066672416
+	1705681556160 [label="conv_set_1.0.bias
+ (64)" fillcolor=lightblue]
+	1705681556160 -> 1706066671168
+	1706066671168 [label=AccumulateGrad]
+	1706066670688 -> 1706066670880
+	1705681557120 [label="conv_set_1.1.weight
+ (64)" fillcolor=lightblue]
+	1705681557120 -> 1706066670688
+	1706066670688 [label=AccumulateGrad]
+	1706066671840 -> 1706066670880
+	1705681557200 [label="conv_set_1.1.bias
+ (64)" fillcolor=lightblue]
+	1705681557200 -> 1706066671840
+	1706066671840 [label=AccumulateGrad]
+	1706066671552 -> 1706114070704
+	1705681564000 [label="conv_set_1.3.weight
+ (64, 64, 3, 3)" fillcolor=lightblue]
+	1705681564000 -> 1706066671552
+	1706066671552 [label=AccumulateGrad]
+	1706066672080 -> 1706114070704
+	1705681562320 [label="conv_set_1.3.bias
+ (64)" fillcolor=lightblue]
+	1705681562320 -> 1706066672080
+	1706066672080 [label=AccumulateGrad]
+	1706066671504 -> 1706114071712
+	1705681561280 [label="conv_set_1.4.weight
+ (64)" fillcolor=lightblue]
+	1705681561280 -> 1706066671504
+	1706066671504 [label=AccumulateGrad]
+	1706066670976 -> 1706114071712
+	1705681555120 [label="conv_set_1.4.bias
+ (64)" fillcolor=lightblue]
+	1705681555120 -> 1706066670976
+	1706066670976 [label=AccumulateGrad]
+	1706114069504 -> 1706114064656
+	1705681565200 [label="conv_set_2.0.weight
+ (128, 64, 3, 3)" fillcolor=lightblue]
+	1705681565200 -> 1706114069504
+	1706114069504 [label=AccumulateGrad]
+	1706114070800 -> 1706114064656
+	1705681567040 [label="conv_set_2.0.bias
+ (128)" fillcolor=lightblue]
+	1705681567040 -> 1706114070800
+	1706114070800 [label=AccumulateGrad]
+	1706114068688 -> 1706114068592
+	1705681566160 [label="conv_set_2.1.weight
+ (128)" fillcolor=lightblue]
+	1705681566160 -> 1706114068688
+	1706114068688 [label=AccumulateGrad]
+	1706114071760 -> 1706114068592
+	1705681558560 [label="conv_set_2.1.bias
+ (128)" fillcolor=lightblue]
+	1705681558560 -> 1706114071760
+	1706114071760 [label=AccumulateGrad]
+	1706119174304 -> 1706119184336
+	1705681567360 [label="conv_set_2.3.weight
+ (128, 128, 3, 3)" fillcolor=lightblue]
+	1705681567360 -> 1706119174304
+	1706119174304 [label=AccumulateGrad]
+	1706119174400 -> 1706119184336
+	1705681563920 [label="conv_set_2.3.bias
+ (128)" fillcolor=lightblue]
+	1705681563920 -> 1706119174400
+	1706119174400 [label=AccumulateGrad]
+	1706119175456 -> 1706119175552
+	1705681564160 [label="conv_set_2.4.weight
+ (128)" fillcolor=lightblue]
+	1705681564160 -> 1706119175456
+	1706119175456 [label=AccumulateGrad]
+	1706119180016 -> 1706119175552
+	1705681558080 [label="conv_set_2.4.bias
+ (128)" fillcolor=lightblue]
+	1705681558080 -> 1706119180016
+	1706119180016 [label=AccumulateGrad]
+	1706119179536 -> 1706119181456
+	1705681563760 [label="conv_set_3.0.weight
+ (256, 128, 3, 3)" fillcolor=lightblue]
+	1705681563760 -> 1706119179536
+	1706119179536 [label=AccumulateGrad]
+	1706119183472 -> 1706119181456
+	1705681561920 [label="conv_set_3.0.bias
+ (256)" fillcolor=lightblue]
+	1705681561920 -> 1706119183472
+	1706119183472 [label=AccumulateGrad]
+	1706119181360 -> 1706119178336
+	1705681561760 [label="conv_set_3.1.weight
+ (256)" fillcolor=lightblue]
+	1705681561760 -> 1706119181360
+	1706119181360 [label=AccumulateGrad]
+	1706119183616 -> 1706119178336
+	1705681562880 [label="conv_set_3.1.bias
+ (256)" fillcolor=lightblue]
+	1705681562880 -> 1706119183616
+	1706119183616 [label=AccumulateGrad]
+	1706119181264 -> 1706119183568
+	1705681556720 [label="conv_set_3.3.weight
+ (256, 256, 3, 3)" fillcolor=lightblue]
+	1705681556720 -> 1706119181264
+	1706119181264 [label=AccumulateGrad]
+	1706119182368 -> 1706119183568
+	1706098436016 [label="conv_set_3.3.bias
+ (256)" fillcolor=lightblue]
+	1706098436016 -> 1706119182368
+	1706119182368 [label=AccumulateGrad]
+	1706119180688 -> 1706119181744
+	1705681824464 [label="conv_set_3.4.weight
+ (256)" fillcolor=lightblue]
+	1705681824464 -> 1706119180688
+	1706119180688 [label=AccumulateGrad]
+	1706119176896 -> 1706119181744
+	1705681824944 [label="conv_set_3.4.bias
+ (256)" fillcolor=lightblue]
+	1705681824944 -> 1706119176896
+	1706119176896 [label=AccumulateGrad]
+	1706119181648 -> 1706119172240
+	1705681825424 [label="conv_set_4.0.weight
+ (512, 256, 3, 3)" fillcolor=lightblue]
+	1705681825424 -> 1706119181648
+	1706119181648 [label=AccumulateGrad]
+	1706119183664 -> 1706119172240
+	1705681829664 [label="conv_set_4.0.bias
+ (512)" fillcolor=lightblue]
+	1705681829664 -> 1706119183664
+	1706119183664 [label=AccumulateGrad]
+	1706119175408 -> 1706119178000
+	1705681829744 [label="conv_set_4.1.weight
+ (512)" fillcolor=lightblue]
+	1705681829744 -> 1706119175408
+	1706119175408 [label=AccumulateGrad]
+	1706119182608 -> 1706119178000
+	1705681818144 [label="conv_set_4.1.bias
+ (512)" fillcolor=lightblue]
+	1705681818144 -> 1706119182608
+	1706119182608 [label=AccumulateGrad]
+	1706119184144 -> 1706119178096
+	1705681817184 [label="conv_set_4.3.weight
+ (512, 512, 3, 3)" fillcolor=lightblue]
+	1705681817184 -> 1706119184144
+	1706119184144 [label=AccumulateGrad]
+	1706119179728 -> 1706119178096
+	1705681817584 [label="conv_set_4.3.bias
+ (512)" fillcolor=lightblue]
+	1705681817584 -> 1706119179728
+	1706119179728 [label=AccumulateGrad]
+	1706119177760 -> 1706119183328
+	1705681817664 [label="conv_set_4.4.weight
+ (512)" fillcolor=lightblue]
+	1705681817664 -> 1706119177760
+	1706119177760 [label=AccumulateGrad]
+	1706119179584 -> 1706119183328
+	1705681818064 [label="conv_set_4.4.bias
+ (512)" fillcolor=lightblue]
+	1705681818064 -> 1706119179584
+	1706119179584 [label=AccumulateGrad]
+	1706119184048 -> 1706114988352
+	1705681825104 [label="conv_set_5.0.weight
+ (512, 512, 3, 3)" fillcolor=lightblue]
+	1705681825104 -> 1706119184048
+	1706119184048 [label=AccumulateGrad]
+	1706119178576 -> 1706114988352
+	1705681819104 [label="conv_set_5.0.bias
+ (512)" fillcolor=lightblue]
+	1705681819104 -> 1706119178576
+	1706119178576 [label=AccumulateGrad]
+	1706114988496 -> 1706114981200
+	1705681819344 [label="conv_set_5.1.weight
+ (512)" fillcolor=lightblue]
+	1705681819344 -> 1706114988496
+	1706114988496 [label=AccumulateGrad]
+	1706119180928 -> 1706114981200
+	1705681815504 [label="conv_set_5.1.bias
+ (512)" fillcolor=lightblue]
+	1705681815504 -> 1706119180928
+	1706119180928 [label=AccumulateGrad]
+	1706114986864 -> 1706114976256
+	1705681814224 [label="conv_set_5.3.weight
+ (512, 512, 3, 3)" fillcolor=lightblue]
+	1705681814224 -> 1706114986864
+	1706114986864 [label=AccumulateGrad]
+	1706114989888 -> 1706114976256
+	1705681816464 [label="conv_set_5.3.bias
+ (512)" fillcolor=lightblue]
+	1705681816464 -> 1706114989888
+	1706114989888 [label=AccumulateGrad]
+	1706114989312 -> 1706114985040
+	1705681816544 [label="conv_set_5.4.weight
+ (512)" fillcolor=lightblue]
+	1705681816544 -> 1706114989312
+	1706114989312 [label=AccumulateGrad]
+	1706114983648 -> 1706114985040
+	1705681826944 [label="conv_set_5.4.bias
+ (512)" fillcolor=lightblue]
+	1705681826944 -> 1706114983648
+	1706114983648 [label=AccumulateGrad]
+	1706114980960 -> 1706114976688
+	1706114980960 [label=TBackward0]
+	1706114976304 -> 1706114980960
+	1705681815744 [label="dense_set_1.0.weight
+ (4096, 25088)" fillcolor=lightblue]
+	1705681815744 -> 1706114976304
+	1706114976304 [label=AccumulateGrad]
+	1706114975488 -> 1706066548800
+	1706114975488 [label=TBackward0]
+	1706114989456 -> 1706114975488
+	1705681813584 [label="dense_set_2.0.weight
+ (1024, 4096)" fillcolor=lightblue]
+	1705681813584 -> 1706114989456
+	1706114989456 [label=AccumulateGrad]
+	1706114983312 -> 1706065415088
+	1706114983312 [label=TBackward0]
+	1706114984512 -> 1706114983312
+	1705681814064 [label="dense_set_3.weight
+ (5, 1024)" fillcolor=lightblue]
+	1705681814064 -> 1706114984512
+	1706114984512 [label=AccumulateGrad]
+	1706065423296 -> 1705681428448
+}
